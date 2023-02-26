@@ -64,8 +64,8 @@ impl TableBuilder for SqliteQueryBuilder {
                     None => "integer".into(),
                 },
                 ColumnType::BigInteger(length) | ColumnType::BigUnsigned(length) => match length {
-                    Some(length) => format!("integer({})", length),
-                    None => "integer".into(),
+                    Some(length) => format!("bigint({})", length),
+                    None => "bigint".into(),
                 },
                 ColumnType::Float(precision) => match precision {
                     Some(precision) => format!("real({})", precision),
